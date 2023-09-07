@@ -1,27 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;500;600;700;800&display=swap');
+html{font-size: 10px;}
 body {padding: 0; margin: 0; height: 100%; font-family: 'Spoqa Han Sans Neo', 'sans-serif';}
 main {width: 100%; height: auto}
+ul {padding: 0; margin: 0; list-style: none;}
+body,p,h1,h2,h3,h4,h5,h6,ul,ol,li,dl,dt,dd,table,th,td,form,fieldset,legend,input,textarea,button,select,div,
+figure,article,header,nav,footer,section,input,textarea,button,span,strong,em 
+{ margin: 0; padding: 0; font-size: 1.5rem; font-weight: 400; letter-spacing: -0.01em; -webkit-box-sizing: border-box; box-sizing: border-box; word-break: keep-all; word-wrap: break-word; white-space: normal}
+h1,h2,h3,h4,h5,h6 {font-weight: 400}
+a{text-decoration: none;}
+
 .header {width: 100%; position: relative;}
-.header_wrap {width: 100%; height: 200px; overflow-x: hidden; z-index: 99; left: 0; position: fixed;}
-.logo {background: url('./img_logo.png') no-repeat 0 0/100%; position: absolute; display: block; top: 10px; left: 60px; width: 214px; height: 56px; overflow: hidden; text-indent: -9999px;}
+.header_wrap {width: 100%; z-index: 9; left: 0; position: fixed;}
+.logo {background: url('./img_logo.png') no-repeat 0 0/100%; position: absolute; display: block; top: 45px; left: 60px; width: 214px; height: 56px; overflow: hidden; text-indent: -9999px; z-index: 30;}
 
 label {width: 100%; height: 100%;}
-label .menu {position: absolute; right: -100px; top: -100px; z-index: 100; width: 200px; height: 200px; overflow: hidden; border-radius: 50% 50% 50% 50%; -webkit-transition: .5s ease-in-out; transition: .5s ease-in-out; box-shadow: 0 0 0 0 #FFF, 0 0 0 0 #FFF; cursor: pointer;}
-label .hamburger {position: absolute; top: 135px; left: 50px; width: 30px; height: 2px; background: #69D2e7; display: block; -webkit-transform-origin: center; transform-origin: center; -webkit-transition: .5s ease-in-out; transition: .5s ease-in-out;}
-label .hamburger:after, label .hamburger:before {-webkit-transition: .5s ease-in-out; transition: .5s ease-in-out; content: ""; position: absolute; display: block; width: 100%; height: 100%; background:#69d2e7;}
-label .hamburger:before { top: -10px; }
-label .hamburger:after { bottom: -10px; }
+label .menu {position: absolute; right: 0px; top: 0px; z-index:11 ; width: 200px; height: 100px; overflow: hidden; cursor: pointer;}
+label .hamburger {position: absolute; top: 68px; right: 58px; width: 1.65vw; height: 4px; background: #fff; display: block; -webkit-transform-origin: center; transform-origin: center; -webkit-transition: .5s ease-in-out; transition: .5s ease-in-out; text-align: end;}
+label .hamburger:after, label .hamburger:before {-webkit-transition: .5s ease-in-out; transition: .5s ease-in-out; content: ""; position: absolute; display: block; width: 2.6vw; height: 0.21vw; background:#fff;}
+label .hamburger:before { top: -15px; right: 0px; }
+label .hamburger:after { bottom: -15px; right: 0; }
 label input { display: none; }
-label input:checked + .menu { box-shadow: 0 0 0 100vw #000, 0 0 0 100vh #000; height: 100%;}
-label input:checked + .menu .hamburger {-webkit-transform: rotate(45deg); transform: rotate(45deg);}
+label input:checked + .menu {height: 100px; }
+label input:checked + .menu .hamburger {-webkit-transform: rotate(45deg); transform: rotate(45deg); width: 2.6vw; right: 60px;}
 label input:checked + .menu .hamburger:after {-webkit-transform: rotate(90deg); transform: rotate(90deg); bottom: 0;}
 label input:checked + .menu .hamburger:before {-webkit-transform: rotate(90deg); transform: rotate(90deg); top: 0;}
-label input:checked + .menu + ul { opacity: 1; display: block; }  
-label ul {z-index: 200; position: absolute; display: none; top: 50%; list-style: none; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); opacity: 0; transition: .25s 0s ease-in-out; }
-label a {margin-bottom: 1em; display: block; color: #f38630; text-decoration: none;}
+label input:checked + .menu + .menu_list { opacity: 1; display: block; }  
+label .menu_list {z-index: 10; position: absolute; display: none; width: 100vw; height: 100vh; background-color: #000; top: 0; left: 0; opacity: 0; transition: all 2s; overflow-y: scroll; animation: fadeIn 0.5s;}
+label ul {width: 596px; margin: 140px auto 0px;}
+label ul li { width: max-content; letter-spacing: -0.01em;}
+label a {display: block; color: #fff; text-decoration: none; text-align: left; font-size: 120px; font-weight: 700;-webkit-transition: color 0.3s; transition: color 0.3s; font-family: 'Abhaya Libre', serif;}
+.menulist_span {color: #fff; display: flex; flex-direction: column; text-align: center; }
+label input:checked + .header_wrap {height: 100vh; background-color: #000;}
+.menulist_span {width: 596px; margin: 95px auto 0; gap: 25px;} 
+.icon_intro, .icon_mail {display: block; color: #fff; font-size: 34px; font-family: 'Abhaya Libre', serif; text-align: left; font-weight: 400; letter-spacing: -0.15px;}
+.icon_intro::before{background: url(./ico_download.png) no-repeat 0 0/100%; color: #fff; content: ''; width: 18.55px; height: 18.55px; display: inline-block; margin-right: 15px; vertical-align: middle; }
+.icon_mail::before{background: url(./ico_email.png) no-repeat 0 0/100%; color: #fff; content: ''; width: 18.55px; height: 18.55px; display: inline-block; margin-right: 15px; vertical-align: middle;}
+.menu_nbr{ vertical-align: super; font-size: 24px; font-weight: 400; letter-spacing: -0.15px; text-align: left; font-family: 'Spoqa Han Sans Neo', 'sans-serif';}
+label ul li a:hover {color: red;}
+@keyframes fadeIn {
+    0% { opacity: 0; } 
+    100% { opacity: 1; }}
 
 .container {height: 100%}
 .contents {background-color: #1a1818;}
 .contents>div {position: relative; z-index: 1}
+.projectSelect{background-attachment: fixed;}
 .projectImg {position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: #000; opacity: 0; transition: opacity 1s linear}
 .projectImg.fade-in {opacity: 1}
 .projectImg .swiper-wrapper:before {content: ''; display: block; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.3);}
@@ -43,12 +66,42 @@ label a {margin-bottom: 1em; display: block; color: #f38630; text-decoration: no
     0% {background-position: 0% 50%}
     100% {background-position: 135% 50%}
 }
-.projectMn {position: relative; top: 0; width: 60vw; margin: 0 auto; padding-bottom: 100px; height: 100vh}
-.projectMn li {position: relative}
-.projectMn li a {display: block; font-size: 12rem; font-weight: 700; word-break: keep-all; color: #fff; opacity: 0.5; -webkit-text-stroke: 1px #fff; -webkit-text-fill-color: transparent; -webkit-background-clip: text; -webkit-transform-origin: left center; transform-origin: left center; -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); transition: -webkit-transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), -webkit-transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);}
-.projectMn li a[aria-selected="true"] {opacity: 1}
-.projectMn li.swiper-slide-active:before {opacity: 1}
-.projectMn li.swiper-slide-active a {-webkit-text-fill-color: #fff}
-.projectMn li .projectNum {font-size: 20px; position: absolute; left: 2px; top: 10px}
+.projectMn {position: relative; top: 0; width: 1220px; margin: 0 auto; padding-bottom: 100px; height: 100vh}
+.projectMn ul {padding: 0; width: 100%;}
+.projectMn li {position: relative; letter-spacing: -0.15px; z-index: 2000;}
+.projectMn li a {display: block ;font-size: 120px; line-height: 1.2; letter-spacing: -0.15px; word-spacing: 0; font-weight: 700; word-break: keep-all; color: #fff; opacity: 0.5; -webkit-text-stroke: 1px #fff; -webkit-text-fill-color: transparent; -webkit-background-clip: text; text-decoration: none; white-space: collapse; text-align: left; padding-left: 35px; margin: 0;}
+.projectMn li a [aria-selected="true"] {opacity: 1}
+.projectMn li .projectNum {font-size: 20px; position: absolute; left: 2px; top: 10px; line-height: normal;}
+.projectMn li.swiper-slide-active a {-webkit-text-fill-color: #fff; opacity: 1}
 .swiper-container {margin-left: auto; margin-right: auto; position: relative; overflow: hidden; list-style: none; padding: 0; z-index: 1}
-.swiper-slide {text-align: center; font-size: 18px; display: flex; justify-content: center; align-items: center;}
+.swiper-slide {font-size: 18px; display: flex; justify-content: center; align-items: center;}
+@media (min-width: 800px) and (max-width: 1900px) {
+    header {height: 7.36842vw}
+    header .logo {top: 2.36842vw; left: 3.15789vw; width: 11.26316vw; height: 2.94737vw}
+    .projectMn {width: 57.89474vw; padding-bottom: 5.26316vw}
+    .projectMn li a {font-size: 70px}
+    .projectMn li.swiper-slide-active a {opacity: 1; -webkit-text-fill-color: #fff}
+}
+@media (max-width: 799px) {
+    header {height: 64px}
+    header .logo {top: 20px;left: 20px;width: 34px;height: 34px;}
+    .projectMn {width: 100%}
+    .projectMn li {opacity: 0}
+    .projectMn li:before {top: -15px;left: 0;font-size: 1.2rem}
+    .projectMn li a {margin-left: 0; font-size: 3.7rem; padding: 0 20px; word-break: normal}
+    .projectMn li .projectNum {display: block; font-size: 13px; position: relative; top: inherit; padding-bottom: 5px}
+    .projectMn li.swiper-slide-active,.projectMn li.swiper-slide-prev,.projectMn li.swiper-slide-next {opacity: 1}
+    .projectSelect { position: relative}
+}
+
+/* aside style  */
+aside{position: absolute; z-index: 5; top: 46.4%; right: -120px; color: #fff; flex-direction: row; display: flex; transform: rotate(-90deg);}
+.sideBtn {display: flex;}
+.sideItem {font-size: 2.8rem; font-family: 'Abhaya Libre', serif; padding: 20px;}
+.sideItem a {color: #fff;}
+.top_down{position: fixed; bottom: 30px; left: -160px; width: 50px; height: 50px; z-index: 10; color: #fff; background-color: transparent; border: none;}
+.top_down::before {content: ''; background: url(./ico_pagescroll.png); width: 29px; height: 26px; display: block; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(90deg); }
+/* footer style  */
+.footer {
+    height: 100vh;
+}
